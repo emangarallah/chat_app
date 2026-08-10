@@ -39,6 +39,7 @@ dependencies:
   firebase_auth: ^6.5.4
   cloud_firestore: ^6.8.0
   modal_progress_hud_nsn: ^0.5.1
+  flutter_bloc: ^9.1.1
 
 
 dev_dependencies:

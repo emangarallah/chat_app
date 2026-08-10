@@ -3,9 +3,11 @@
 import 'package:flutter/material.dart';
 
 import '../constant.dart';
+import '../models/message.dart';
 
 class ChatBuble extends StatelessWidget {
-  const ChatBuble({super.key});
+  const ChatBuble({super.key,required this.message});
+  final Message message;
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +31,7 @@ class ChatBuble extends StatelessWidget {
             color: kPrimaryColor
 
         ),
-        child:Text('iam a new user',style: TextStyle(color: Colors.white),),
+        child:Text(message.message,style: TextStyle(color: Colors.white),),
       ),
     );
   }
