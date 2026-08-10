@@ -1,3 +1,4 @@
+import 'package:chat_app/screen/chat_cubit/chat_cubit.dart';
 import 'package:chat_app/screen/cubit_login/login_cubit.dart';
 import 'package:chat_app/screen/cubit_login/login_state.dart';
 import 'package:flutter/material.dart';
@@ -27,6 +28,7 @@ class LoginPage extends StatelessWidget {
       listener: (context, state) {
 
         if (state is LoginSuccess) {
+          BlocProvider.of<ChatCubit>(context).getMessages();
           Navigator.pushNamed(context, ChatPage.id);
         } else if (state is LoginFailure) {
           showSnackBar(context, state.errorMessage);
