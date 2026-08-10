@@ -95,7 +95,21 @@ class ChatPage extends StatelessWidget {
                     },
                     decoration: InputDecoration(
                       hintText: 'Send Message',
-                      suffixIcon: const Icon(Icons.send, color: kPrimaryColor),
+                        suffixIcon: IconButton(
+                          icon: const Icon(Icons.send, color: kPrimaryColor),
+                          onPressed: () {
+                            BlocProvider.of<ChatCubit>(context).sendMessage(
+                              message: _textController.text,
+                              email: email,
+                            );
+                            _textController.clear();
+                            _scrollController.animateTo(
+                              0,
+                              duration: const Duration(milliseconds: 500),
+                              curve: Curves.easeIn,
+                            );
+                          },
+                        ),
 
 
                       border: OutlineInputBorder(
