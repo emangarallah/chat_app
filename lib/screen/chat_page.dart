@@ -67,6 +67,7 @@ class ChatPage extends StatelessWidget {
                            return message.id == email
                                ? ChatBuble(message: message)
                                : Chatbubleforfrind(message: message);
+
                          },
                        );
                      },

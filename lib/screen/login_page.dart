@@ -29,7 +29,7 @@ class LoginPage extends StatelessWidget {
 
         if (state is LoginSuccess) {
           BlocProvider.of<ChatCubit>(context).getMessages();
-          Navigator.pushNamed(context, ChatPage.id);
+          Navigator.pushNamed(context, ChatPage.id,arguments: email);
         } else if (state is LoginFailure) {
           showSnackBar(context, state.errorMessage);
         }
